@@ -23,7 +23,7 @@ class IngredientShortage extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.ingredient')
+        return $this
             ->from('abdallamaher89@gmail.com')
             ->to('merchant@email.com')
             ->subject('Warning : ' . ucWords($this->ingredient->name) . ' Reached below its half level')

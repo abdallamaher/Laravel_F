@@ -8,3 +8,4 @@
 1. Run "./vendor/bin/sail artisan key:generate"
 1. Run "./vendor/bin/sail artisan migrate"
 1. Run "./vendor/bin/sail artisan db:seed"
+1. Run "./vendor/bin/sail artisan queue:work"

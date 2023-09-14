@@ -21,7 +21,11 @@ class OrderController extends Controller
      */
     public function store(OrderRequest $request): Response
     {
-        $order = $this->service->store($request->validated());
+        try {
+            $order = $this->service->store($request->validated());
+        } catch (\Throwable $th) {
+            return response(null, Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
         return response($order, Response::HTTP_CREATED);
     }
 }

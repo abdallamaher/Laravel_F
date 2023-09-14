@@ -1,4 +1,4 @@
-## Installation For Chrome
+## Installation
 
 1. Install laravel sail https://laravel.com/docs/8.x/sail
 1. Clone this Repository

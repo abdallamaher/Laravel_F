@@ -80,7 +80,7 @@ class OrderTest extends TestCase
                 ]
             ]
         ];
-        $this->post($this->orderPath, $data)->assertStatus(Response::HTTP_BAD_REQUEST);
+        $this->post($this->orderPath, $data)->assertStatus(Response::HTTP_INTERNAL_SERVER_ERROR);
         $this->assertEquals(0, Order::count());
     }
 

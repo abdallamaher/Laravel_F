@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Exceptions\InvalidOrderException;
 use App\Repositories\ProductRepository;
 use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -47,7 +48,7 @@ class ProductService
         // Check if enough stock
         foreach ($requiredAmount as $ingredientId => $amount) {
             if ($ingredientAmounts[$ingredientId] < $amount) {
-                throw new BadRequestHttpException('Not enough stock');
+                throw new InvalidOrderException('Not enough stock for ingredient ' . $ingredientId);
             }
         }
         return $requiredAmount;
